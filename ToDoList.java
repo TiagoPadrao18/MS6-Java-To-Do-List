@@ -130,12 +130,12 @@ public class ToDoList {
         double percentageTaskComplete = (double) completedTasks / totalTasks * 100;
         if (notCompletedTasks > 0 || array.size() > 0) {
             System.out.println("\n\t\u001b[38;5;15mCompleted Tasks\u001b[0m");
-            System.out.println("Tasks complete: " + percentageTaskComplete + " %");
+            System.out.println("\u001b[32;1mTasks complete: " + percentageTaskComplete + " %\u001b[0m");
             System.out.println("\u001b[38;5;8m------------------------\u001b[0m");
             viewCompletedTasks(array);
             System.out.println("\u001b[38;5;8m------------------------\u001b[0m");
             System.out.println("\n\t\t\u001b[38;5;15mToDoList\u001b[0m");
-            System.out.println("You have " + notCompletedTasks + " tasks to do!");
+            System.out.println("\u001b[33;1mYou have " + notCompletedTasks + " tasks to do!\u001b[0m");
             System.out.println("\u001b[38;5;8m------------------------\u001b[0m");
             for (int i = 0; i < toDoList.length; i++) {
                 if (toDoList[i] != null) {
@@ -154,11 +154,11 @@ public class ToDoList {
         Scanner scan = new Scanner(System.in);
 
         System.out.print("\n\u001b[38;5;15mCreate task: \u001b[0m");
-        String userNewTask = scan.nextLine().trim() + " in: " + LocalDate.now() + " at " + LocalTime.now();
+        String userNewTask = scan.nextLine().trim() + " || \u001b[32;1mcreated in:\u001b[0m " + LocalDate.now() + "\u001b[32;1m at \u001b[0m " + LocalTime.now();
         System.out.println("Insert a notes");
         String taskNotes = scan.next();
 
-        userNewTask += " " + "note: " + taskNotes;
+        userNewTask += " " + "\u001b[32;1mNote:\u001b[0m " + taskNotes;
 
         if (!userNewTask.isEmpty()) {
             boolean added = false;
@@ -247,23 +247,13 @@ public class ToDoList {
 
             if (toDoList[userChoiceOfTaskToEdit] != null) {
 
-                if (toDoList[userChoiceOfTaskToEdit].contains(" ✅")) {
-                    toDoList[userChoiceOfTaskToEdit] = toDoList[userChoiceOfTaskToEdit].replace(" ✅", "");
                     System.out.println("\n\u001b[38;5;15mOld: " + toDoList[userChoiceOfTaskToEdit] + "\u001b[0m");
                     System.out.print("\u001b[38;5;15mNew: \u001b[0m");
-                    String userEditTask = scan.nextLine();
-
-                    System.out.println("\n\u001b[38;5;10mThe task '\u001b[38;5;15m" + toDoList[userChoiceOfTaskToEdit] + "\u001b[38;5;10m' was changed to '\u001b[38;5;15m" + userEditTask + "\u001b[38;5;10m'!");
-                    userEditTask = userEditTask.concat(" ✅");
-                    toDoList[userChoiceOfTaskToEdit] = userEditTask;
-                } else {
-                    System.out.println("\n\u001b[38;5;15mOld: " + toDoList[userChoiceOfTaskToEdit] + "\u001b[0m");
-                    System.out.print("\u001b[38;5;15mNew: \u001b[0m");
-                    String userEditTask = scan.nextLine();
+                    String userEditTask = scan.nextLine() + "||\u001b[32;1m edited in:\u001b[0m " + LocalDate.now() + " \u001b[32;1mat:\u001b[0m " + LocalTime.now();;
 
                     System.out.println("\n\u001b[38;5;10mThe task '\u001b[38;5;15m" + toDoList[userChoiceOfTaskToEdit] + "\u001b[38;5;10m' was changed to '\u001b[38;5;15m" + userEditTask + "\u001b[38;5;10m'!");
                     toDoList[userChoiceOfTaskToEdit] = userEditTask;
-                }
+
             } else {
                 System.out.println("\n\u001b[38;5;9mInvalid task option!\u001b[0m");
             }

@@ -1,0 +1,20 @@
+Program :
+To Do List 😄
+1º Entidades
+-Task
+-User
+
+2º Relacionamentos
+- 1 x 1
+- 1 x N
+- N x N
+
+3º Classes
+-User Manager
+-Task Manager
+-ToDoManager
+
+4º Métodos
+ User Manager :
+
+ createUser
