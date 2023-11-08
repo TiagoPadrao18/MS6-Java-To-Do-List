@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class ToDoList {
+    static TaskManager task = new TaskManager();
 
     void mainMenu() {
 
@@ -54,10 +55,10 @@ public class ToDoList {
 
             switch (userChoice) {
                 case 1:
-                    showToDoList(toDoList, doneTasks);
+                    task.getList();
                     break;
                 case 2:
-                    createTask(toDoList);
+                   task.createTask();
                     break;
                 case 3:
                     markTaskAsCompleted(toDoList, doneTasks);
