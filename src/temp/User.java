@@ -1,3 +1,5 @@
+package src.temp;
+
 public class User {
     String name;
     String userName;

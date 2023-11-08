@@ -1,8 +1,8 @@
 Program :
 To Do List 😄
 1º Entidades
--Task
--User
+-src.model.Task
+-src.temp.User
 
 2º Relacionamentos
 - 1 x 1
@@ -10,11 +10,11 @@ To Do List 😄
 - N x N
 
 3º Classes
--User Manager
--Task Manager
--ToDoManager
+-src.temp.User Manager
+-src.model.Task Manager
+-src.temp.ToDoManager
 
 4º Métodos
- User Manager :
+ src.temp.User Manager :
 
  createUser
