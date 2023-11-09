@@ -11,16 +11,22 @@ public class ToDoList {
     private final List<Task> deletedTasks;
 
     private final List<Task> completedTasks;
-
+    public int freePlanTasks = 10;
+    public int premiumPlanTasks = 30;
     public ToDoList() {
-        this.tasks = new ArrayList<>();
+
+        this.tasks = new ArrayList<>(freePlanTasks);
         this.deletedTasks = new ArrayList<>();
         this.completedTasks = new ArrayList<>();
     }
 
+    public void showWarning(){
+        logger.warning("\n\t\t\t\tIMPORTANT WARNING\n\t\tNow you are with Premium! Thanks!");
+    }
+
     public void createTask(String name, String description,List<String>notes) {
         try {
-            if (tasks.size() < 10) {
+            if (tasks.size() < freePlanTasks) {
                 Task newTask = new Task(name, description);
                 newTask.setTaskNotes(notes);
                 tasks.add(newTask);
@@ -118,11 +124,12 @@ public class ToDoList {
     }
 
     public void updateToPremium(){
-
+        freePlanTasks = premiumPlanTasks;
+        showWarning();
     }
 
     public void organizeAlphabetically(){
-     //  Collections.sort(tasks);
+     // Collections.sort(tasks)
 
     }
 
