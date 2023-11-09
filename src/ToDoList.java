@@ -115,6 +115,7 @@ public class ToDoList {
             logger.log("Completed Tasks");
             logger.log("Tasks complete: " + percentageTaskComplete + "%");
             printCompleteTasks();
+            logger.log("\n");
             logger.log("To Do list");
             logger.log("You have " + notCompletedTasks + " tasks to do !");
             printTasks();
