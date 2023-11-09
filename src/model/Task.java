@@ -22,9 +22,11 @@ public class Task {
         this.taskNotes = new ArrayList<>();
     }
 
+
     public List<String> getTaskNotes() {
         return taskNotes;
     }
+
 
     public void setTaskNotes(List<String> taskNotes) {
         this.taskNotes = taskNotes;
